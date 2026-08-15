@@ -1,0 +1,187 @@
+/* ==========================================================================
+   AFROSYNTHESE — MOTION & ANIMATION SYSTEM
+   Smooth cinematic transitions, Ken Burns zoom, 3D perspective tilts,
+   scroll-triggered reveals, and realistic magazine page turns.
+   ========================================================================== */
+
+/* Ken Burns Slow Zoom */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1.0) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate(-1%, -1%);
+  }
+  100% {
+    transform: scale(1.03) translate(1%, 0.5%);
+  }
+}
+
+.ken-burns {
+  animation: kenBurnsSlow 16s infinite alternate ease-in-out;
+  will-change: transform;
+}
+
+/* Scroll Reveal Base Classes */
+.reveal-on-scroll,
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-clip {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: clip-path;
+}
+
+.reveal-on-scroll.revealed,
+.reveal-fade-up.revealed,
+.reveal-fade-left.revealed,
+.reveal-fade-right.revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-clip.revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Stagger Delays */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+/* Subtle 3D Card Tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Magnetic Button Transition Helper */
+.btn-magnetic {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Subtle Floating Elements */
+@keyframes floatSubtle {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-element {
+  animation: floatSubtle 6s infinite ease-in-out;
+}
+
+/* Magazine Double-Page 3D Flip Simulation */
+.magazine-page-flip {
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-style: preserve-3d;
+}
+
+.magazine-page-flip.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* Subtle Shimmer for Skeleton Loader */
+@keyframes luxuryShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #161616 25%, #222222 50%, #161616 75%);
+  background-size: 200% 100%;
+  animation: luxuryShimmer 2s infinite ease-in-out;
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0A0A0A;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+  
+  .reveal-on-scroll,
+  .reveal-fade-up,
+  .reveal-fade-left,
+  .reveal-fade-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal-clip {
+    clip-path: none !important;
+  }
+
+  .floating-element {
+    animation: none !important;
+  }
+
+  .ken-burns {
+    animation: none !important;
+  }
+}

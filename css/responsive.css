@@ -1,0 +1,214 @@
+/* ==========================================================================
+   AFROSYNTHESE — RESPONSIVE DESIGN BREAKPOINTS
+   Ensures seamless viewing on 1920px widescreen, 1440px desktop,
+   tablets, and mobile displays without horizontal scroll.
+   ========================================================================== */
+
+/* Widescreen & 4K (1920px+) */
+@media (min-width: 1920px) {
+  :root {
+    --container-max: 1720px;
+    --container-narrow: 1320px;
+  }
+
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Laptops & Standard Desktops (Max 1280px) */
+@media (max-width: 1280px) {
+  .main-nav {
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+  
+  .intro-grid {
+    gap: 3rem;
+  }
+}
+
+/* Tablets Landscape & Small Laptops (Max 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .header-actions .btn {
+    display: none;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .intro-img-frame img {
+    height: 480px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-wizard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary-card {
+    position: static;
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .lightbox-content {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-info-box {
+    max-height: 250px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .magazine-spread-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .reader-page.page-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+/* Tablets Portrait (Max 768px) */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 1.5rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 4rem;
+    --space-4xl: 5.5rem;
+  }
+
+  .container, .container-narrow {
+    padding: 0 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-content {
+    padding-bottom: 5rem;
+  }
+
+  .hero-controls {
+    bottom: 1.5rem;
+    right: 1.25rem;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .masonry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img-wrapper img,
+  .gallery-item.aspect-portrait .gallery-img-wrapper img {
+    height: 380px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .dashboard-main {
+    padding: 1.5rem;
+  }
+
+  .floating-whatsapp-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .cookie-banner {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Small (Max 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .intro-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .brand-logo img {
+    max-width: 170px;
+    height: 38px;
+  }
+}
