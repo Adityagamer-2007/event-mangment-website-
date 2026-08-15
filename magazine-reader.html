@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Interactive 3D Reader — AfroSynthese</title>
+  <meta name="description" content="Experience AfroSynthese Magazine in an interactive double-page 3D flip reader with page zoom, high-resolution photography spreads, and table of contents.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color:#080808;">
+
+  <!-- Site Header (Reader Mode Minimal) -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="magazine.html" class="brand-logo" aria-label="Back to Magazines">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+      </a>
+      <div style="font-family:var(--font-serif); font-size:1.1rem; color:var(--text-secondary); text-align:center;">
+        Issue No. 06: The Renaissance of African Elegance
+      </div>
+      <div class="header-actions">
+        <a href="magazine.html" class="btn btn-secondary btn-sm">Exit Reader ✕</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: calc(var(--header-height) + 1.5rem); padding-bottom: 4rem;">
+    <div class="container">
+      
+      <!-- Progress Bar -->
+      <div style="width:100%; max-width:1300px; margin:0 auto 1rem; height:3px; background:rgba(255,255,255,0.08); position:relative;">
+        <div id="readerProgressFill" style="height:100%; width:12%; background:var(--accent-gold); transition:width 0.4s ease;"></div>
+      </div>
+
+      <!-- Reader Viewport -->
+      <div class="reader-viewport">
+        <div class="magazine-spread-container">
+          <!-- Left Page -->
+          <div class="reader-page page-left" id="readerPageLeft">
+            <!-- Dynamic via magazine.js -->
+          </div>
+
+          <!-- Right Page -->
+          <div class="reader-page page-right" id="readerPageRight">
+            <!-- Dynamic via magazine.js -->
+          </div>
+        </div>
+
+        <!-- Reader Controls Toolbar -->
+        <div class="reader-toolbar">
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <button class="slider-nav-btn prev" id="readerPrevBtn" aria-label="Previous Page Spread" style="width:40px; height:40px;">‹</button>
+            <span id="readerPageCounter" style="font-size:0.82rem; letter-spacing:0.14em; color:var(--text-primary);">Pages 1-2 of 8</span>
+            <button class="slider-nav-btn next" id="readerNextBtn" aria-label="Next Page Spread" style="width:40px; height:40px;">›</button>
+          </div>
+
+          <div style="font-size:0.75rem; color:var(--text-muted); display:none; @media(min-width:768px){display:block;}">
+            Use Keyboard <strong style="color:var(--text-primary);">← / →</strong> Arrow Keys or Swipe
+          </div>
+
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <button class="btn btn-secondary btn-sm" id="readerZoomBtn" style="padding:0.45rem 0.9rem; font-size:0.72rem;">🔍 Zoom</button>
+            <button class="btn btn-secondary btn-sm" id="readerFullscreenBtn" style="padding:0.45rem 0.9rem; font-size:0.72rem;">⛶ Fullscreen</button>
+            <a href="subscription.html" class="btn btn-gold btn-sm" style="padding:0.45rem 0.9rem; font-size:0.72rem;">Subscribe (€3.50/mo)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/magazine.js"></script>
+</body>
+</html>

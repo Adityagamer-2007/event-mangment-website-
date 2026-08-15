@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Settings & Preferences — AfroSynthese</title>
+  <meta name="description" content="Manage your granular cookie preferences and privacy settings on AfroSynthese.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Official Logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="galleries.html" class="nav-link">Galleries</a>
+        <a href="magazine.html" class="nav-link">Magazine</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="booking.html" class="btn btn-gold btn-sm">Book Your Date</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 5rem;">
+    <div class="container-narrow">
+      <span class="eyebrow">PRIVACY & COOKIE CONSENT</span>
+      <h1 style="margin: 0.5rem 0 2rem;">Cookie Settings & Preferences</h1>
+
+      <div style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:3.5rem;">
+        <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.7; margin-bottom:2.5rem;">
+          AfroSynthese respects your privacy. You can choose which cookies and technologies are enabled on your device. Essential cookies are required for basic site navigation, booking sessions, and secure demo dashboard state.
+        </p>
+
+        <form id="cookieSettingsForm" style="display:flex; flex-direction:column; gap:2rem;">
+          <!-- Necessary Cookies -->
+          <div style="background:var(--bg-tertiary); padding:1.5rem; border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h4 style="color:var(--text-primary); margin-bottom:0.25rem;">Strictly Necessary Cookies (Always Active)</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Enables essential portal navigation, booking state caching, and security verification.</p>
+            </div>
+            <div>
+              <input type="checkbox" checked disabled style="accent-color:var(--accent-gold); width:20px; height:20px; cursor:not-allowed;">
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div style="background:var(--bg-tertiary); padding:1.5rem; border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h4 style="color:var(--text-primary); margin-bottom:0.25rem;">Preference & UI Customization Cookies</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Remembers your magazine reading bookmarks, favorite gallery filters, and custom cursor modes.</p>
+            </div>
+            <div>
+              <input type="checkbox" id="prefCookies" checked style="accent-color:var(--accent-gold); width:20px; height:20px; cursor:pointer;">
+            </div>
+          </div>
+
+          <!-- Statistics -->
+          <div style="background:var(--bg-tertiary); padding:1.5rem; border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h4 style="color:var(--text-primary); margin-bottom:0.25rem;">Analytics & Performance Cookies</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Anonymous metrics to optimize image loading performance and video stream caching across Europe.</p>
+            </div>
+            <div>
+              <input type="checkbox" id="statCookies" checked style="accent-color:var(--accent-gold); width:20px; height:20px; cursor:pointer;">
+            </div>
+          </div>
+
+          <!-- Marketing -->
+          <div style="background:var(--bg-tertiary); padding:1.5rem; border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h4 style="color:var(--text-primary); margin-bottom:0.25rem;">Marketing & Event Tour Broadcasts</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Allows personalized recommendations for upcoming concert tour dates and new magazine releases.</p>
+            </div>
+            <div>
+              <input type="checkbox" id="mktgCookies" style="accent-color:var(--accent-gold); width:20px; height:20px; cursor:pointer;">
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+            <button type="submit" class="btn btn-gold">Save Cookie Preferences</button>
+            <button type="button" id="acceptAllBtn" class="btn btn-secondary">Accept All Cookies</button>
+            <button type="button" id="rejectAllBtn" class="btn btn-secondary">Reject Non-Essential</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2020 – 2026 AfroSynthese. All rights reserved. Directed by Darrell-Fedele Amisi.</div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="legal-notice.html">Legal Notice</a>
+          <a href="cookies.html" style="color:var(--accent-gold);">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('cookieSettingsForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      localStorage.setItem('afrosynthese_cookie_consent', 'custom_preferences');
+      if (window.showToast) window.showToast('Your cookie preferences have been recorded successfully.');
+    });
+
+    document.getElementById('acceptAllBtn')?.addEventListener('click', () => {
+      localStorage.setItem('afrosynthese_cookie_consent', 'accepted_all');
+      document.getElementById('prefCookies').checked = true;
+      document.getElementById('statCookies').checked = true;
+      document.getElementById('mktgCookies').checked = true;
+      if (window.showToast) window.showToast('All cookie categories accepted.');
+    });
+
+    document.getElementById('rejectAllBtn')?.addEventListener('click', () => {
+      localStorage.setItem('afrosynthese_cookie_consent', 'essential_only');
+      document.getElementById('prefCookies').checked = false;
+      document.getElementById('statCookies').checked = false;
+      document.getElementById('mktgCookies').checked = false;
+      if (window.showToast) window.showToast('Non-essential cookies disabled.');
+    });
+  </script>
+</body>
+</html>

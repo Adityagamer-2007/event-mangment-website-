@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Admin Management Dashboard — AfroSynthese</title>
+  <meta name="description" content="AfroSynthese enterprise administrative management portal. Monitor bookings, agent rosters, live revenue charts, and charity contributions to Jardin d'adoration e.V.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header (Admin Mode) -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+      </a>
+      <div style="font-size:0.85rem; color:var(--accent-gold); letter-spacing:0.14em; text-transform:uppercase;">
+        ENTERPRISE MANAGEMENT CONSOLE
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Public Website</a>
+        <a href="login.html" class="btn btn-gold btn-sm">Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div>
+        <div class="dash-user-profile">
+          <img src="assets/images/ceo_darrell.jpg" alt="Admin Avatar" class="dash-user-avatar">
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">Darrell-Fedele Amisi</div>
+            <div style="font-size:0.75rem; color:var(--accent-gold);">Chairman & CEO</div>
+          </div>
+        </div>
+
+        <nav class="dash-nav-list" style="font-size:0.82rem;">
+          <a href="#overview" class="dash-nav-link active">📊 System KPIs & Revenue</a>
+          <a href="#bookings" class="dash-nav-link">📅 Bookings & Event Approvals</a>
+          <a href="#clients" class="dash-nav-link">👥 Client Directory</a>
+          <a href="#agents" class="dash-nav-link">🎥 Field Agents (Europe/Kinshasa)</a>
+          <a href="#charity" class="dash-nav-link">🤝 Jardin d’adoration 20% Fund</a>
+          <a href="#cards" class="dash-nav-link">💳 PVC Card Orders</a>
+          <a href="#magazines" class="dash-nav-link">📖 Magazine Issues</a>
+        </nav>
+      </div>
+
+      <div style="border-top:1px solid var(--border-subtle); padding-top:1.5rem; font-size:0.75rem; color:var(--text-muted);">
+        Corporate Tax ID: <strong>13/206/00090</strong><br>
+        Berlin HQ • Kinshasa Bureau
+      </div>
+    </aside>
+
+    <!-- Main Admin Dashboard -->
+    <main class="dashboard-main">
+      
+      <!-- Top KPIs -->
+      <div class="stats-card-grid">
+        <div class="stat-card">
+          <div class="stat-card-title">Total Gross Revenue (YTD)</div>
+          <div class="stat-card-val">€428,500</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">20% Charity Allocated</div>
+          <div class="stat-card-val" style="color:#4ade80;">€85,700</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">Active Bookings</div>
+          <div class="stat-card-val">18</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">Field Crew on Duty</div>
+          <div class="stat-card-val">12</div>
+        </div>
+      </div>
+
+      <!-- Live Revenue Growth Canvas Chart -->
+      <div class="chart-card reveal-on-scroll">
+        <div class="flex-between" style="margin-bottom:1.5rem;">
+          <div>
+            <span class="eyebrow">FINANCIAL PERFORMANCE</span>
+            <h3 style="font-size:1.6rem; margin-top:0.25rem;">2026 Monthly Production Revenue (€k)</h3>
+          </div>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Updated Live</span>
+        </div>
+        <div style="width:100%; height:240px; position:relative;">
+          <canvas id="revenueChartCanvas" style="width:100%; height:100%;"></canvas>
+        </div>
+      </div>
+
+      <!-- Bookings Approval Table -->
+      <div id="bookings" style="margin-bottom:3.5rem;">
+        <div class="flex-between" style="margin-bottom:1.5rem;">
+          <div>
+            <span class="eyebrow">RESERVATION PIPELINE</span>
+            <h2>Client Booking Approvals & Status</h2>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Client / Artist</th>
+                <th>Discipline</th>
+                <th>Date</th>
+                <th>Total Fee</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminBookingsList">
+              <!-- Dynamically populated via admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 20% Charity Sponsorship Summary Box -->
+      <div id="charity" style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:2.5rem;">
+        <span class="eyebrow">OFFICIAL SPONSOR BENEFICIARY</span>
+        <h3 style="font-size:1.8rem; margin:0.25rem 0 1rem;">Jardin d’adoration e.V. Monthly Allocation</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.5rem;">
+          Under AfroSynthese corporate charter established in Germany in 2020 by Darrell-Fedele Amisi, 20% of all monthly gross receipts are disbursed automatically to Jardin d’adoration e.V. to support youth education, community welfare, and spiritual empowerment.
+        </p>
+        <div style="display:flex; gap:2rem; font-size:0.9rem;">
+          <div><strong>August 2026 Accrued Contribution:</strong> <span style="color:#4ade80;">€17,800.00</span></div>
+          <div><strong>Beneficiary Status:</strong> <span class="badge badge-success">Disbursement Verified</span></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

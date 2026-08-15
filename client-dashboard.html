@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal & Media Archive — AfroSynthese</title>
+  <meta name="description" content="AfroSynthese client dashboard for reviewing event media, downloading high-resolution deliverables, managing invoices, and contacting executive concierge.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header (Scrolled Portal Style) -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+      </a>
+      <div style="font-size:0.85rem; color:var(--accent-gold); letter-spacing:0.14em; text-transform:uppercase;">
+        CLIENT PORTAL
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Public Website</a>
+        <a href="login.html" class="btn btn-gold btn-sm">Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div>
+        <div class="dash-user-profile">
+          <img src="assets/images/team_member_1.jpg" alt="Client Avatar" class="dash-user-avatar">
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">Jean-Luc Fontaine</div>
+            <div style="font-size:0.75rem; color:var(--accent-gold);">VIP Client Member</div>
+          </div>
+        </div>
+
+        <nav class="dash-nav-list">
+          <a href="#overview" class="dash-nav-link active">📊 Dashboard Overview</a>
+          <a href="#bookings" class="dash-nav-link">📅 My Bookings & Events</a>
+          <a href="#deliverables" class="dash-nav-link">📸 Download Media Masters</a>
+          <a href="#invoices" class="dash-nav-link">💳 Invoices & Receipts</a>
+          <a href="#concierge" class="dash-nav-link">💬 Concierge Message Box</a>
+          <a href="magazine-reader.html" class="dash-nav-link">📖 Magazine Digital Access</a>
+        </nav>
+      </div>
+
+      <div style="border-top:1px solid var(--border-subtle); padding-top:1.5rem; font-size:0.75rem; color:var(--text-muted);">
+        20% of your booking fee is allocated to <strong>Jardin d’adoration e.V.</strong><br>
+        Tax ID: <strong>13/206/00090</strong>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-main">
+      
+      <!-- Top KPIs -->
+      <div class="stats-card-grid">
+        <div class="stat-card">
+          <div class="stat-card-title">Active Reservations</div>
+          <div class="stat-card-val">02</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">Completed Productions</div>
+          <div class="stat-card-val">01</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">High-Res Media Ready</div>
+          <div class="stat-card-val">350+</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title">Charity Impact Funded</div>
+          <div class="stat-card-val" style="color:#4ade80;">20%</div>
+        </div>
+      </div>
+
+      <!-- Bookings Table Section -->
+      <div id="bookings" style="margin-bottom:3.5rem;">
+        <div class="flex-between" style="margin-bottom:1.5rem;">
+          <div>
+            <span class="eyebrow">EVENT SCHEDULE</span>
+            <h2>My Production Bookings</h2>
+          </div>
+          <a href="booking.html" class="btn btn-gold btn-sm">+ Book New Date</a>
+        </div>
+
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Event Category</th>
+                <th>Scheduled Date</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Deliverables</th>
+              </tr>
+            </thead>
+            <tbody id="clientBookingsList">
+              <!-- Dynamically populated via dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Invoices Section -->
+      <div id="invoices" style="margin-bottom:3.5rem;">
+        <div class="flex-between" style="margin-bottom:1.5rem;">
+          <div>
+            <span class="eyebrow">FINANCIAL STATEMENTS</span>
+            <h2>Invoices & Payment Records</h2>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Invoice Ref</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Total Amount</th>
+                <th>Payment Status</th>
+                <th>Download Official PDF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>INV-2026-0812</strong></td>
+                <td>2026-08-12</td>
+                <td>Paris Luxury Wedding Coverage (8 Hours)</td>
+                <td><strong>€2,550.00</strong></td>
+                <td><span class="badge badge-gold">Deposit Paid (€765)</span></td>
+                <td><button class="btn btn-secondary btn-sm btn-download-invoice">Download PDF</button></td>
+              </tr>
+              <tr>
+                <td><strong>INV-2026-0615</strong></td>
+                <td>2026-06-15</td>
+                <td>Berlin Afrobeats Arena Concert Tour (4 Hours)</td>
+                <td><strong>€1,850.00</strong></td>
+                <td><span class="badge badge-success">Fully Paid</span></td>
+                <td><button class="btn btn-secondary btn-sm btn-download-invoice">Download Receipt</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Concierge Message Box -->
+      <div id="concierge" style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:2.5rem;">
+        <span class="eyebrow">DIRECT COMMUNICATION</span>
+        <h3 style="font-size:1.8rem; margin:0.25rem 0 1rem;">Concierge Desk Message</h3>
+        <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+          Have questions regarding your upcoming event call sheet, shot lists, or color grading notes? Speak directly with Darrell-Fedele Amisi or your assigned production crew.
+        </p>
+
+        <form id="clientMsgForm">
+          <div class="form-group">
+            <textarea id="clientMsgInput" class="form-control" rows="3" placeholder="Type your directive or inquiry here..." required></textarea>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <a href="https://wa.me/4915259657007" target="_blank" style="font-size:0.85rem; color:var(--accent-gold);">Or chat live via WhatsApp: +49 152 59657007 →</a>
+            <button type="submit" class="btn btn-gold btn-sm">Send Directive</button>
+          </div>
+        </form>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

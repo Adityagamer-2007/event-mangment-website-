@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Access & Sign In — AfroSynthese</title>
+  <meta name="description" content="Sign in to AfroSynthese portals for Clients, Field Production Agents, and Enterprise Management.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background-color:#0A0A0A;">
+
+  <!-- Site Header -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Return to Website</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: calc(var(--header-height) + 2rem); min-height: 85vh; display:flex; align-items:center; justify-content:center;">
+    <div class="container" style="max-width:540px;">
+      
+      <div class="tilt-card reveal-on-scroll" style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:3rem; box-shadow:0 25px 60px rgba(0,0,0,0.8);">
+        
+        <div style="text-align:center; margin-bottom:2rem;">
+          <img src="assets/logos/logo.png" alt="AfroSynthese Official Logo" style="height:44px; margin:0 auto 1.25rem;">
+          <span class="eyebrow">PORTAL AUTHENTICATION</span>
+          <h2 style="font-size:2rem; margin-top:0.25rem;">Select Your Role</h2>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.4rem;">
+            Choose a demo account below for instant 1-click access to portals.
+          </p>
+        </div>
+
+        <!-- Role Selector Buttons -->
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem; margin-bottom:2rem;">
+          <button type="button" class="btn btn-gold btn-sm role-btn active" data-role="client">Client</button>
+          <button type="button" class="btn btn-secondary btn-sm role-btn" data-role="agent">Agent</button>
+          <button type="button" class="btn btn-secondary btn-sm role-btn" data-role="admin">Admin</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email / Identifier</label>
+            <input type="email" id="loginEmail" class="form-control" value="client@afrosynthese.org" required>
+          </div>
+          <div class="form-group" style="margin-bottom:2rem;">
+            <label class="form-label" for="loginPassword">Access Key / Password</label>
+            <input type="password" id="loginPassword" class="form-control" value="••••••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-gold" id="loginSubmitBtn" style="width:100%; margin-bottom:1.5rem;">
+            Enter Client Portal →
+          </button>
+        </form>
+
+        <div style="text-align:center; font-size:0.82rem; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:1.5rem;">
+          Don't have an active booking? <a href="register.html" style="color:var(--accent-gold);">Register Client Account</a> or <a href="booking.html" style="color:var(--accent-gold);">Book Date</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    let selectedRole = 'client';
+    const roleBtns = document.querySelectorAll('.role-btn');
+    const emailInput = document.getElementById('loginEmail');
+    const submitBtn = document.getElementById('loginSubmitBtn');
+
+    roleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        roleBtns.forEach(b => { b.classList.remove('btn-gold'); b.classList.add('btn-secondary'); });
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-gold');
+
+        selectedRole = btn.getAttribute('data-role');
+        if (selectedRole === 'client') {
+          emailInput.value = 'client@afrosynthese.org';
+          submitBtn.textContent = 'Enter Client Portal →';
+        } else if (selectedRole === 'agent') {
+          emailInput.value = 'agent.paris@afrosynthese.org';
+          submitBtn.textContent = 'Enter Field Agent Portal →';
+        } else {
+          emailInput.value = 'admin@afrosynthese.org';
+          submitBtn.textContent = 'Enter Enterprise Admin Portal →';
+        }
+      });
+    });
+
+    document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (window.showToast) window.showToast(`Authenticating ${selectedRole} credentials...`);
+      setTimeout(() => {
+        if (selectedRole === 'client') window.location.href = 'client-dashboard.html';
+        else if (selectedRole === 'agent') window.location.href = 'agent-dashboard.html';
+        else window.location.href = 'admin-dashboard.html';
+      }, 700);
+    });
+  </script>
+</body>
+</html>

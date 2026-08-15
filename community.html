@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Community & Cultural Discussions — AfroSynthese</title>
+  <meta name="description" content="Join the AfroSynthese creative community. Connect with photographers, filmmakers, cultural organizers, and diaspora creators across Europe and Central Africa.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Official Logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="nav-link">Services ▾</a>
+          <div class="dropdown-menu">
+            <a href="photography.html" class="dropdown-item">Photography</a>
+            <a href="videography.html" class="dropdown-item">Videography</a>
+            <a href="cineamisi.html" class="dropdown-item">Cinéamisi Film</a>
+            <a href="pvc-cards.html" class="dropdown-item">PVC ID Cards</a>
+            <a href="personalized-products.html" class="dropdown-item">Personalized Prints</a>
+          </div>
+        </div>
+        <a href="galleries.html" class="nav-link">Galleries</a>
+        <a href="magazine.html" class="nav-link">Magazine</a>
+        <a href="cineamisi.html" class="nav-link">Cinéamisi</a>
+        <a href="community.html" class="nav-link active">Community</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle-btn" aria-label="Search site">🔍</button>
+        <a href="login.html" class="account-btn" title="Client / Agent Portal">👤</a>
+        <a href="booking.html" class="btn btn-gold btn-sm">Book Your Date</a>
+        <button class="mobile-menu-toggle" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--header-height);">
+    <!-- Hero Banner -->
+    <section class="section" style="background: linear-gradient(to bottom, #111, var(--bg-primary)); padding: 5rem 0 3rem;">
+      <div class="container text-center reveal-on-scroll">
+        <span class="eyebrow">DIASPORA & CREATIVE GUILD</span>
+        <h1 style="margin-bottom: 1rem;">Community Forum & Dialogues</h1>
+        <p class="lead" style="max-width: 760px; margin: 0 auto;">
+          An intellectual exchange hub linking visual artists, event organizers, and cultural curators across Berlin, Paris, Brussels, London, and Kinshasa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Community Board Grid -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:3rem;">
+          
+          <!-- Discussion Feed -->
+          <div>
+            <!-- Post Creation Box -->
+            <div style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:2rem; margin-bottom:2.5rem;" class="reveal-on-scroll">
+              <h3 style="font-size:1.4rem; margin-bottom:1rem;">Share a Creative Discussion or Query</h3>
+              <form id="communityPostForm">
+                <div class="form-group">
+                  <input type="text" id="postAuthor" class="form-control" placeholder="Your Name or Studio Handle" required style="margin-bottom:0.75rem;">
+                  <textarea id="postContent" class="form-control" rows="3" placeholder="Share creative insights, tour collaborations, or lighting advice..." required></textarea>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Posts are moderated by AfroSynthese Editorial Bureau</span>
+                  <button type="submit" class="btn btn-gold btn-sm">Publish Discussion</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Existing Posts Stream -->
+            <div id="communityPostsStream" style="display:flex; flex-direction:column; gap:1.5rem;">
+              <!-- Default Demo Post 1 -->
+              <div class="tilt-card reveal-on-scroll" style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:2rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                  <div>
+                    <strong style="color:var(--accent-gold);">Kareem L.</strong> <span style="font-size:0.8rem; color:var(--text-muted);">(Concert Promoter, Brussels)</span>
+                  </div>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">2 hours ago</span>
+                </div>
+                <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.25rem;">
+                  Huge appreciation to the AfroSynthese video crew who covered the Palais 12 concert in Brussels last weekend. The turnaround time on the 4K highlight reel was astonishing. Has anyone seen the backstage photo gallery yet?
+                </p>
+                <div style="display:flex; gap:1rem; font-size:0.8rem; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:1rem;">
+                  <button class="btn-like-post" style="color:var(--text-secondary); cursor:pointer;">♥ Like (38)</button>
+                  <span>💬 12 Replies</span>
+                  <a href="galleries.html?cat=concerts" style="color:var(--accent-gold);">View Concert Gallery →</a>
+                </div>
+              </div>
+
+              <!-- Default Demo Post 2 -->
+              <div class="tilt-card reveal-on-scroll reveal-delay-1" style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:2rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                  <div>
+                    <strong style="color:var(--accent-gold);">Esther Mwamba</strong> <span style="font-size:0.8rem; color:var(--text-muted);">(Cultural Director, Kinshasa)</span>
+                  </div>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Yesterday</span>
+                </div>
+                <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.25rem;">
+                  For traditional ceremonies in the DRC, lighting in outdoor courtyards after sunset requires special finesse. The balance between warm ambient fire and soft fill lights made our family dotation photos look like a royal Renaissance painting.
+                </p>
+                <div style="display:flex; gap:1rem; font-size:0.8rem; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:1rem;">
+                  <button class="btn-like-post" style="color:var(--text-secondary); cursor:pointer;">♥ Like (54)</button>
+                  <span>💬 9 Replies</span>
+                  <a href="articles.html" style="color:var(--accent-gold);">Read Heritage Article →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Information -->
+          <div>
+            <div style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:2rem; margin-bottom:2rem;" class="reveal-on-scroll">
+              <span class="eyebrow">OFFICIAL AMBASSADOR</span>
+              <h4 style="margin:0.25rem 0 0.75rem;">Her Excellency Louise Nzanga Ramazani</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.25rem;">
+                Championing African cultural diplomacy, diaspora unity, and artistic excellence across Europe and the Democratic Republic of Congo.
+              </p>
+              <a href="ambassadors.html" class="link-arrow">Ambassador Profile →</a>
+            </div>
+
+            <div style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:2rem;" class="reveal-on-scroll reveal-delay-1">
+              <span class="eyebrow">COMMUNITY GUIDELINES</span>
+              <h4 style="margin:0.25rem 0 0.75rem;">Editorial Standards</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+                Our community is dedicated to constructive creative dialogues, technical lighting discussions, cultural heritage preservation, and collaborative international tour logistics.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+          </a>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+            Digital media platform providing media coverage for events throughout Europe and operating with a dedicated creative team in Kinshasa. Founded in Germany in 2020 by Darrell-Fedele Amisi.
+          </p>
+          <div class="footer-charity-box">
+            <div class="footer-charity-title">Official Beneficiary Commitment</div>
+            <div class="footer-charity-desc">
+              AfroSynthese contributes 20% of its monthly revenue to Jardin d’adoration e.V. as an official sponsor of the association.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">About AfroSynthese</a></li>
+            <li><a href="team.html" class="footer-link">Creative Leadership</a></li>
+            <li><a href="ambassadors.html" class="footer-link">Brand Ambassador</a></li>
+            <li><a href="sponsors.html" class="footer-link">Sponsors & Partners</a></li>
+            <li><a href="community.html" class="footer-link">Community Hub</a></li>
+            <li><a href="announcements.html" class="footer-link">Official Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links-list">
+            <li><a href="photography.html" class="footer-link">Photography Portfolio</a></li>
+            <li><a href="videography.html" class="footer-link">Videography & Cinema</a></li>
+            <li><a href="cineamisi.html" class="footer-link">Cinéamisi Division</a></li>
+            <li><a href="pvc-cards.html" class="footer-link">Professional PVC Cards</a></li>
+            <li><a href="personalized-products.html" class="footer-link">Personalized Products</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing Packages</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Editorial</h4>
+          <ul class="footer-links-list">
+            <li><a href="magazine.html" class="footer-link">AfroSynthese Magazine</a></li>
+            <li><a href="magazine-reader.html" class="footer-link">Interactive Reader</a></li>
+            <li><a href="subscription.html" class="footer-link">€3.50/mo Subscription</a></li>
+            <li><a href="articles.html" class="footer-link">Editorial Diary</a></li>
+            <li><a href="galleries.html" class="footer-link">Visual Archive</a></li>
+            <li><a href="booking.html" class="footer-link">Online Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Concierge & Offices</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.6rem;">
+            <strong>Headquarters:</strong> Berlin, Germany<br>
+            <strong>Central Africa Desk:</strong> Kinshasa, DRC
+          </p>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.6rem;">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/4915259657007" target="_blank" style="color:var(--accent-gold);">+49 152 59657007</a><br>
+            <strong>Email:</strong> <a href="mailto:asep.ev.central@gmail.com" style="color:var(--text-primary);">asep.ev.central@gmail.com</a>
+          </p>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
+            Germany Tax No: <strong>13/206/00090</strong>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm" style="width:100%;">Member Portals</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2020 – 2026 AfroSynthese. All rights reserved. Directed by Darrell-Fedele Amisi.</div>
+        <div class="footer-socials">
+          <a href="https://instagram.com/afrosynthese" class="social-icon-link" aria-label="Instagram" target="_blank">IG</a>
+          <a href="https://tiktok.com/@afrosynthese" class="social-icon-link" aria-label="TikTok" target="_blank">TK</a>
+          <a href="https://facebook.com/afrosynthese" class="social-icon-link" aria-label="Facebook" target="_blank">FB</a>
+          <a href="https://x.com/afrosynthese" class="social-icon-link" aria-label="X" target="_blank">X</a>
+          <a href="https://linkedin.com/company/afrosynthese" class="social-icon-link" aria-label="LinkedIn" target="_blank">IN</a>
+          <a href="https://wa.me/4915259657007" class="social-icon-link" aria-label="WhatsApp" target="_blank">WA</a>
+        </div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="legal-notice.html">Legal Notice</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/4915259657007" class="floating-whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    document.getElementById('communityPostForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const author = document.getElementById('postAuthor').value;
+      const content = document.getElementById('postContent').value;
+      const stream = document.getElementById('communityPostsStream');
+
+      const card = document.createElement('div');
+      card.className = 'tilt-card';
+      card.style.cssText = 'background:var(--bg-secondary); border:1px solid var(--border-gold); padding:2rem;';
+      card.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+          <div><strong style="color:var(--accent-gold);">${author}</strong> <span style="font-size:0.8rem; color:var(--text-muted);">(Member)</span></div>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Just now</span>
+        </div>
+        <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.25rem;">${content}</p>
+        <div style="display:flex; gap:1rem; font-size:0.8rem; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:1rem;">
+          <span>♥ Like (1)</span>
+          <span>💬 0 Replies</span>
+        </div>
+      `;
+      stream.insertBefore(card, stream.firstChild);
+      if (window.showToast) window.showToast('Discussion published to community hub.');
+      document.getElementById('communityPostForm').reset();
+    });
+  </script>
+</body>
+</html>

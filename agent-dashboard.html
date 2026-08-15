@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Agent & Production Crew Portal — AfroSynthese</title>
+  <meta name="description" content="AfroSynthese agent portal for production crew, photographers, cinematographers, call sheets, hours logging, and field reports.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header (Agent Mode) -->
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+      </a>
+      <div style="font-size:0.85rem; color:var(--accent-gold); letter-spacing:0.14em; text-transform:uppercase;">
+        FIELD AGENT PORTAL
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Public Website</a>
+        <a href="login.html" class="btn btn-gold btn-sm">Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div>
+        <div class="dash-user-profile">
+          <img src="assets/images/team_member_1.jpg" alt="Agent Avatar" class="dash-user-avatar">
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">Marc-Aurèle V.</div>
+            <div style="font-size:0.75rem; color:var(--accent-gold);">Lead Cinematographer (Paris)</div>
+          </div>
+        </div>
+
+        <nav class="dash-nav-list">
+          <a href="#callsheet" class="dash-nav-link active">📋 Today's Call Sheet</a>
+          <a href="#schedule" class="dash-nav-link">📅 Upcoming Assignments</a>
+          <a href="#equipment" class="dash-nav-link">🎥 Equipment Roster</a>
+          <a href="#reports" class="dash-nav-link">📝 Submit Field Report</a>
+          <a href="#payments" class="dash-nav-link">💶 Payroll & Overtime</a>
+        </nav>
+      </div>
+
+      <div style="border-top:1px solid var(--border-subtle); padding-top:1.5rem; font-size:0.75rem; color:var(--text-muted);">
+        AfroSynthese Europe Crew • ID: <strong>AG-88219</strong><br>
+        Emergency Hotline: <strong>+49 152 59657007</strong>
+      </div>
+    </aside>
+
+    <!-- Main Agent Dashboard -->
+    <main class="dashboard-main">
+      
+      <!-- Call Sheet Section -->
+      <div id="callsheet" style="background:var(--bg-secondary); border:1px solid var(--border-gold); padding:2.5rem; margin-bottom:3rem;" class="reveal-on-scroll">
+        <div class="flex-between" style="margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span class="badge badge-gold">TODAY'S PRODUCTION CALL SHEET</span>
+            <h2 style="font-size:2.2rem; margin-top:0.35rem;">Paris Grand Wedding & Reception</h2>
+          </div>
+          <span style="font-size:0.9rem; color:var(--text-primary); background:#1a1a1a; padding:0.5rem 1rem; border:1px solid var(--border-subtle);">
+            Date: <strong>Saturday, Aug 22, 2026</strong>
+          </span>
+        </div>
+
+        <div class="grid grid-3" style="margin-bottom:2rem;">
+          <div style="background:var(--bg-tertiary); padding:1.25rem; border:1px solid var(--border-subtle);">
+            <div style="font-size:0.75rem; color:var(--accent-gold); text-transform:uppercase; margin-bottom:0.25rem;">Meeting Point</div>
+            <div style="font-weight:600;">Château de Chantilly Courtyard</div>
+            <div style="font-size:0.8rem; color:var(--text-muted);">Main Gate Security Pass: AFRO-01</div>
+          </div>
+          <div style="background:var(--bg-tertiary); padding:1.25rem; border:1px solid var(--border-subtle);">
+            <div style="font-size:0.75rem; color:var(--accent-gold); text-transform:uppercase; margin-bottom:0.25rem;">Call Time / Wrap Time</div>
+            <div style="font-weight:600;">11:30 AM — 23:30 PM (12 Hours)</div>
+            <div style="font-size:0.8rem; color:var(--text-muted);">Overtime authorized past 22:00</div>
+          </div>
+          <div style="background:var(--bg-tertiary); padding:1.25rem; border:1px solid var(--border-subtle);">
+            <div style="font-size:0.75rem; color:var(--accent-gold); text-transform:uppercase; margin-bottom:0.25rem;">Director & Co-Crew</div>
+            <div style="font-weight:600;">Lead: Darrell-Fedele Amisi</div>
+            <div style="font-size:0.8rem; color:var(--text-muted);">Second: Sophie L. (Audio Sync)</div>
+          </div>
+        </div>
+
+        <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6; border-top:1px solid var(--border-subtle); padding-top:1.25rem;">
+          <strong>Directives:</strong> Prioritize 6K anamorphic capture for bridal entrance and sunset golden hour portraiture in the gardens. Maintain low-light prime profile for evening candle-lit banquet.
+        </div>
+      </div>
+
+      <!-- Submit Field Production Report -->
+      <div id="reports" style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:2.5rem; margin-bottom:3rem;">
+        <span class="eyebrow">FIELD REPORTING</span>
+        <h3 style="font-size:1.8rem; margin:0.25rem 0 1.25rem;">Submit Production Report & Overtime Log</h3>
+        
+        <form id="agentDailyReportForm">
+          <div class="grid grid-2" style="margin-bottom:1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="reportEventName">Event Commission Ref</label>
+              <input type="text" id="reportEventName" class="form-control" value="BK-948201 (Paris Wedding)" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reportHours">Total Production Hours Logged</label>
+              <input type="number" id="reportHours" class="form-control" min="1" max="18" value="12" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:1.75rem;">
+            <label class="form-label" for="reportNotes">Field Notes, Footage Card Numbers & Incidents</label>
+            <textarea id="reportNotes" class="form-control" rows="3" placeholder="e.g. 4x 128GB CFexpress Cards filmed, DCI-P3 audio multi-track verified, no equipment damages..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-sm">Submit Field Report to Berlin Desk</button>
+        </form>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

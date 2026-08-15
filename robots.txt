@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /client-dashboard.html
+Disallow: /agent-dashboard.html
+Disallow: /admin-dashboard.html
+
+Sitemap: https://afrosynthese.com/sitemap.xml

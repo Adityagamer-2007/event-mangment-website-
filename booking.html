@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Production Date — AfroSynthese</title>
+  <meta name="description" content="Reserve your event date directly online with AfroSynthese. Custom media packages for weddings, concerts, conferences, and gala productions across Europe and Kinshasa.">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="AfroSynthese Home">
+        <img src="assets/logos/logo.png" alt="AfroSynthese Official Logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="nav-link">Services ▾</a>
+          <div class="dropdown-menu">
+            <a href="photography.html" class="dropdown-item">Photography</a>
+            <a href="videography.html" class="dropdown-item">Videography</a>
+            <a href="cineamisi.html" class="dropdown-item">Cinéamisi Film</a>
+            <a href="pvc-cards.html" class="dropdown-item">PVC ID Cards</a>
+            <a href="personalized-products.html" class="dropdown-item">Personalized Prints</a>
+          </div>
+        </div>
+        <a href="galleries.html" class="nav-link">Galleries</a>
+        <a href="magazine.html" class="nav-link">Magazine</a>
+        <a href="cineamisi.html" class="nav-link">Cinéamisi</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle-btn" aria-label="Search site">🔍</button>
+        <a href="login.html" class="account-btn" title="Client / Agent Portal">👤</a>
+        <a href="booking.html" class="btn btn-gold btn-sm active">Book Your Date</a>
+        <button class="mobile-menu-toggle" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--header-height);">
+    <!-- Hero Banner -->
+    <section class="section" style="background: linear-gradient(to bottom, #111, var(--bg-primary)); padding: 5rem 0 3rem;">
+      <div class="container text-center reveal-on-scroll">
+        <span class="eyebrow">CONCIERGE SCHEDULING</span>
+        <h1 style="margin-bottom: 1rem;">Book Your Date Directly Online</h1>
+        <p class="lead" style="max-width: 760px; margin: 0 auto;">
+          Select your discipline, specify crew requirements, select your date on our calendar, and receive an instant live price and deposit estimate.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Booking Wizard -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="booking-wizard-grid">
+          <!-- Form Section -->
+          <div class="booking-form-box reveal-on-scroll">
+            <form id="bookingForm">
+              <h3 style="margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:1rem;">1. Select Discipline & Event Type</h3>
+              
+              <div class="grid grid-2" style="margin-bottom:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="serviceTypeSelect">Service Package</label>
+                  <select id="serviceTypeSelect" class="form-control">
+                    <option value="combo" selected>Photography + Videography (Combo)</option>
+                    <option value="photography">Photography Only</option>
+                    <option value="videography">Videography Only</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="eventTypeSelect">Event Category</label>
+                  <select id="eventTypeSelect" class="form-control">
+                    <option value="Weddings" selected>Luxury Wedding Ceremony</option>
+                    <option value="Concerts">Concert / Live Music Tour</option>
+                    <option value="Traditional">Traditional / Dowry Ceremony</option>
+                    <option value="Corporate">Corporate Summit / Gala</option>
+                    <option value="Birthdays">Birthday / Private Milestone</option>
+                    <option value="Religious">Religious / Spiritual Gathering</option>
+                    <option value="Cinema">Short Film / Cinéamisi Project</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-3" style="margin-bottom:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="durationSelect">Coverage Duration</label>
+                  <select id="durationSelect" class="form-control">
+                    <option value="2">2 Hours (Intimate)</option>
+                    <option value="4">4 Hours (Half Day)</option>
+                    <option value="6" selected>6 Hours (Standard)</option>
+                    <option value="8">8 Hours (Full Day)</option>
+                    <option value="10">10 Hours (Elite Full Day)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="photographerCount">Photographer Count</label>
+                  <input type="number" id="photographerCount" class="form-control" min="0" max="4" value="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="videographerCount">Videographer Count</label>
+                  <input type="number" id="videographerCount" class="form-control" min="0" max="4" value="1">
+                </div>
+              </div>
+
+              <h3 style="margin:2.5rem 0 1.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:1rem;">2. Select Event Date</h3>
+              
+              <div class="calendar-widget" style="margin-bottom:2rem;">
+                <div class="calendar-header">
+                  <button type="button" class="btn-icon" id="calPrevBtn" aria-label="Previous Month">‹</button>
+                  <h4 id="calMonthTitle" style="font-family:var(--font-serif); font-size:1.4rem;">August 2026</h4>
+                  <button type="button" class="btn-icon" id="calNextBtn" aria-label="Next Month">›</button>
+                </div>
+                <div class="calendar-grid">
+                  <div class="calendar-day-header">Mon</div>
+                  <div class="calendar-day-header">Tue</div>
+                  <div class="calendar-day-header">Wed</div>
+                  <div class="calendar-day-header">Thu</div>
+                  <div class="calendar-day-header">Fri</div>
+                  <div class="calendar-day-header">Sat</div>
+                  <div class="calendar-day-header">Sun</div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem; text-align:center;">
+                  Click an available date to select your event schedule.
+                </div>
+              </div>
+
+              <h3 style="margin:2.5rem 0 1.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:1rem;">3. Production Location & Add-ons</h3>
+              
+              <div class="form-group">
+                <label class="form-label" for="locationCity">Event Venue & City</label>
+                <input type="text" id="locationCity" class="form-control" placeholder="e.g. Paris (Château de Chantilly) / Berlin / Kinshasa" value="Berlin, Germany" required>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem;">
+                <label style="display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; cursor:pointer;">
+                  <input type="checkbox" id="addonDrone" style="accent-color:var(--accent-gold); width:18px; height:18px;">
+                  <span>4K Drone Aerial Cinematic Package (+€250)</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; cursor:pointer;">
+                  <input type="checkbox" id="addonPhotobook" style="accent-color:var(--accent-gold); width:18px; height:18px;">
+                  <span>Italian Handcrafted Genuine Leather Photobook (+€180)</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; cursor:pointer;">
+                  <input type="checkbox" id="addonExpress" style="accent-color:var(--accent-gold); width:18px; height:18px;">
+                  <span>Expedited 48-Hour Priority Master Delivery (+€150)</span>
+                </label>
+              </div>
+
+              <h3 style="margin:2.5rem 0 1.5rem; border-bottom:1px solid var(--border-subtle); padding-bottom:1rem;">4. Client Contact Details</h3>
+              
+              <div class="grid grid-2" style="margin-bottom:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="clientName">Full Name / Organization</label>
+                  <input type="text" id="clientName" class="form-control" placeholder="e.g. Jean-Luc Fontaine" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="clientEmail">Email Address</label>
+                  <input type="email" id="clientEmail" class="form-control" placeholder="e.g. client@example.com" required>
+                </div>
+              </div>
+
+              <div class="grid grid-2" style="margin-bottom:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="clientPhone">Telephone / WhatsApp</label>
+                  <input type="tel" id="clientPhone" class="form-control" placeholder="e.g. +49 152 59657007" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="clientNotes">Special Creative Directives</label>
+                  <input type="text" id="clientNotes" class="form-control" placeholder="Ceremony details, VIP arrivals...">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width:100%; padding:1.2rem; font-size:0.88rem;">
+                Confirm Reservation & Request Deposit Quote
+              </button>
+            </form>
+          </div>
+
+          <!-- Sticky Live Summary Card -->
+          <div class="booking-summary-card reveal-on-scroll reveal-delay-1">
+            <span class="eyebrow">LIVE PRODUCTION QUOTE</span>
+            <h3 style="margin:0.25rem 0 1.5rem; font-size:1.8rem;">Booking Summary</h3>
+
+            <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.88rem; border-bottom:1px solid var(--border-subtle); padding-bottom:1.5rem;">
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Package:</span>
+                <strong id="summaryService">Photo + Video Combo</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Category:</span>
+                <strong id="summaryEvent">Weddings</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Selected Date:</span>
+                <strong id="summaryDate" style="color:var(--accent-gold);">Select from calendar</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Duration:</span>
+                <strong id="summaryHours">6 Hours</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Assigned Crew:</span>
+                <span id="summaryCrew" style="text-align:right;">1 Photo, 1 Video</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-muted">Location:</span>
+                <span id="summaryLocation" style="text-align:right;">Berlin, Germany</span>
+              </div>
+            </div>
+
+            <div style="padding:1.5rem 0; border-bottom:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:0.6rem;">
+              <div style="display:flex; justify-content:space-between; font-size:1.1rem;">
+                <span>Estimated Investment:</span>
+                <strong id="summaryTotal" style="font-family:var(--font-serif); font-size:1.6rem; color:var(--accent-gold);">€1,950</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-secondary);">
+                <span>30% Deposit to Secure:</span>
+                <strong id="summaryDeposit">€585</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-secondary);">
+                <span>70% Balance on Delivery:</span>
+                <strong id="summaryBalance">€1,365</strong>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem; font-size:0.78rem; color:var(--text-muted); line-height:1.5;">
+              ★ <strong>20% Beneficiary:</strong> A minimum of 20% of monthly revenues is contributed to Jardin d’adoration e.V.<br>
+              ★ <strong>Tax No:</strong> 13/206/00090 (Germany).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logos/logo.png" alt="AfroSynthese Logo">
+          </a>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6;">
+            Digital media platform providing media coverage for events throughout Europe and operating with a dedicated creative team in Kinshasa. Founded in Germany in 2020 by Darrell-Fedele Amisi.
+          </p>
+          <div class="footer-charity-box">
+            <div class="footer-charity-title">Official Beneficiary Commitment</div>
+            <div class="footer-charity-desc">
+              AfroSynthese contributes 20% of its monthly revenue to Jardin d’adoration e.V. as an official sponsor of the association.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">About AfroSynthese</a></li>
+            <li><a href="team.html" class="footer-link">Creative Leadership</a></li>
+            <li><a href="ambassadors.html" class="footer-link">Brand Ambassador</a></li>
+            <li><a href="sponsors.html" class="footer-link">Sponsors & Partners</a></li>
+            <li><a href="community.html" class="footer-link">Community Hub</a></li>
+            <li><a href="announcements.html" class="footer-link">Official Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-links-list">
+            <li><a href="photography.html" class="footer-link">Photography Portfolio</a></li>
+            <li><a href="videography.html" class="footer-link">Videography & Cinema</a></li>
+            <li><a href="cineamisi.html" class="footer-link">Cinéamisi Division</a></li>
+            <li><a href="pvc-cards.html" class="footer-link">Professional PVC Cards</a></li>
+            <li><a href="personalized-products.html" class="footer-link">Personalized Products</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing Packages</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Editorial</h4>
+          <ul class="footer-links-list">
+            <li><a href="magazine.html" class="footer-link">AfroSynthese Magazine</a></li>
+            <li><a href="magazine-reader.html" class="footer-link">Interactive Reader</a></li>
+            <li><a href="subscription.html" class="footer-link">€3.50/mo Subscription</a></li>
+            <li><a href="articles.html" class="footer-link">Editorial Diary</a></li>
+            <li><a href="galleries.html" class="footer-link">Visual Archive</a></li>
+            <li><a href="booking.html" class="footer-link">Online Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Concierge & Offices</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.6rem;">
+            <strong>Headquarters:</strong> Berlin, Germany<br>
+            <strong>Central Africa Desk:</strong> Kinshasa, DRC
+          </p>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.6rem;">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/4915259657007" target="_blank" style="color:var(--accent-gold);">+49 152 59657007</a><br>
+            <strong>Email:</strong> <a href="mailto:asep.ev.central@gmail.com" style="color:var(--text-primary);">asep.ev.central@gmail.com</a>
+          </p>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
+            Germany Tax No: <strong>13/206/00090</strong>
+          </div>
+          <div style="margin-top:1.25rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm" style="width:100%;">Member Portals</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2020 – 2026 AfroSynthese. All rights reserved. Directed by Darrell-Fedele Amisi.</div>
+        <div class="footer-socials">
+          <a href="https://instagram.com/afrosynthese" class="social-icon-link" aria-label="Instagram" target="_blank">IG</a>
+          <a href="https://tiktok.com/@afrosynthese" class="social-icon-link" aria-label="TikTok" target="_blank">TK</a>
+          <a href="https://facebook.com/afrosynthese" class="social-icon-link" aria-label="Facebook" target="_blank">FB</a>
+          <a href="https://x.com/afrosynthese" class="social-icon-link" aria-label="X" target="_blank">X</a>
+          <a href="https://linkedin.com/company/afrosynthese" class="social-icon-link" aria-label="LinkedIn" target="_blank">IN</a>
+          <a href="https://wa.me/4915259657007" class="social-icon-link" aria-label="WhatsApp" target="_blank">WA</a>
+        </div>
+        <div style="display:flex; gap:1.25rem;">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="legal-notice.html">Legal Notice</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/4915259657007" class="floating-whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
